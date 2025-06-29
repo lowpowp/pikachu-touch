@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/html5-virtual-game-controller/dist/gamecontroller.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="https://gorisanson.github.io/pikachu-volleyball/en/"></iframe>
+  <script>
+    GameController.init({
+      controllerLayout: 'dpad+buttons',
+      left: {
+        type: 'dpad',
+        position: { left: '10%', bottom: '20%' },
+        dpad: { radius: 50 }
+      },
+      right: {
+        type: 'buttons',
+        position: { right: '10%', bottom: '20%' },
+        buttons: [
+          { key: ' ', label: 'Jump' }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
